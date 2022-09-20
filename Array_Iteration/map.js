@@ -31,7 +31,7 @@ console.log(ages)
 // Output:
 // [(22, 23, 24, 25)]
 
-// Approach: 03 -> Using arrow function
+// Approach: 03 -> Using arrow function (Recommended)
 const positions = people.map((person) => {
     return person.position
 })
