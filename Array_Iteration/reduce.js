@@ -32,11 +32,13 @@ console.log(totalSalary2)
 
 // Output: 1100
 
-// Approach: 01 -> Using Arrow function (recommended)
+// Approach: 03 -> Using Arrow function (recommended)
 const totalSalary3 = people.reduce((total, current) => {
     total += current.salary
     return total
 }, 0)
+
+// Here 0 is the default value of total. It can be object, array or anything.
 
 console.log(totalSalary3)
 
