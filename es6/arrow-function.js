@@ -14,7 +14,7 @@ const multiply = (num1, num2) => {
 }
 console.log(multiply(3, 4)) // Output: 7
 
-// return object
+// return object (special case)
 const object = () => ({ name: 'john', age: 25 })
 const person = object()
 console.log(person) // Output: { name: 'john', age: 25 }

@@ -24,3 +24,26 @@ function countTotal() {
 }
 
 countTotal(67, 54, 89, 100) // Output: 310
+
+// DOM Elements (NodeList)
+// <p>john</p>
+// <p>peter</p>
+// <p>susan</p>
+// <h2 id="result"></h2>
+// <h2 id="second"></h2>
+
+const p = document.querySelector('p')
+const result = document.getElementById('result')
+const second = document.getElementById('second')
+
+// Way 01
+let newText = Array.from(p)
+newText = newText.map((item) => '<span>${item.textContent}</span>').join(' ')
+result.innerHTML = newText
+
+// Way 02 -> using callback function of Array.from()
+// implement map function inside callback function
+const text = Array.from(document.querySelectorAll('p'), (item) => {
+    return '<span>${item.textContent}</span>'
+}).join(' ')
+second.innerHTML = text
