@@ -99,3 +99,33 @@ console.log(sibling.previousSibling.previousSibling) // Output: <li>orange</li>
 // nextElementSibling
 console.log(sibling.nextElementSibling) // Output: <li>pear</li>
 console.log(sibling.previousElementSibling) // Output: <li>orange</li>
+
+// 99
+// nodeValue
+// textContent
+const newValue = document.getElementById('title')
+const value1 = newValue.firstChild.nodeValue
+console.log(value1)
+
+const easyValue = newValue.textContent
+console.log(easyValue)
+
+// 100
+// getAttribute()
+// setAttribute()
+
+const first1 = document.querySelector('.className')
+const classValue = first1.getAttribute('class') // Retrieve class name
+console.log(classValue)
+
+const idValue = first1.getAttribute('id') // Retrieve id name
+console.log(idValue)
+
+const linkValue = document.getElementById('link')
+const showLink = linkValue.getAttribute('href')
+console.log(showLink)
+
+const lastValue = link.nextElementSibling
+lastValue.setAttribute('class', 'first')
+lastValue.textContent = 'I also have a class of first'
+console.log(lastValue)
