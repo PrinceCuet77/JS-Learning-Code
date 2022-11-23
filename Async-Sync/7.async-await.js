@@ -1,4 +1,16 @@
-// 'async' function is returning a 'Promise' by default.
+// Async/await
+// await waits till promise is settled
+// error handling - try/catch
+
+// 1. syntax
+// async function someFunction() {
+//     await
+// }
+
+// 2. syntax
+// const otherFunction = async() => {
+//     await
+// }
 
 const one = document.querySelector('.one')
 const two = document.querySelector('.two')
@@ -7,12 +19,6 @@ const three = document.querySelector('.three')
 const btn = document.querySelector('.btn')
 
 btn.addEventListener('click', async () => {
-    const result = await display()
-    console.log(result) // If I don't return anything from 'display' function then 'result' will show undefined. But now printing 'Prince' because of I return 'Prince' from 'display' function.
-})
-
-// Return a 'Promise'.
-async function display() {
     try {
         const first = await loader(1000, one, 'red')
         console.log('first: ', first) // 'undefined' because I don't pass anything inside 'resolve'. If I pass 'hello' inside 'resolve' then I can grab 'hello' using 'first' variable.
@@ -22,9 +28,7 @@ async function display() {
     } catch (error) {
         console.log(error)
     }
-
-    return 'Prince' // kind of resolve('Prince') because 'async' function returns 'Promise' by default.
-}
+})
 
 function loader(timer, heading, colorValue) {
     return new Promise((resolve, reject) => {
@@ -38,3 +42,5 @@ function loader(timer, heading, colorValue) {
         }
     })
 }
+
+// async function returns a promise by default. The example is in index.js file.
