@@ -8,12 +8,13 @@ const x = val[0]
 console.log(x, val[0])
 
 // Update the value of an array
-console.log("Before update: " + val[2])
+console.log('Before update: ' + val[2])
 val[2] = false
-console.log("After update: " + val[2])
+console.log('After update: ' + val[2])
 
 // I can use like that
-const a = 2, b = 3
+const a = 2,
+    b = 3
 const newVal = [a, b]
 console.log(newVal)
 console.log(newVal[0])
