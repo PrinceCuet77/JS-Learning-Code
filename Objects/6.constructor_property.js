@@ -1,4 +1,4 @@
-// All objects in javascript have access to constructor property that returns a constructor function that created it.
+// All objects in javascript have access to 'constructor' property that returns a 'constructor' function that created it.
 // Built in constructor functions
 // Arrays and functions are objects in javascripts
 
@@ -32,6 +32,7 @@ console.log(sayHi.constructor)
 // Output:
 // [Function: Function]
 
+// 'john.constructor' is pointing to 'Person' function (Constructor function). So, I can use like that.
 const susy = new john.constructor('susy', 'carpenter')
 susy.fullName()
 // Output:

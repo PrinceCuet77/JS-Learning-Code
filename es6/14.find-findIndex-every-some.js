@@ -16,3 +16,5 @@ const anna = people.filter((person) => person.name === 'anna')
 console.log(anna)
 console.log(anna[0].name)
 console.log(anna[0].id)
+
+// remaining...
