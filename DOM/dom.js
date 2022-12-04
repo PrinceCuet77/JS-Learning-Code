@@ -1,131 +1,71 @@
-// 90
+// ----------------- 89
+// returns a node object or node list, which is an array-like object.
+
+// ----------------- 90
 // window object = browser api
-// console.dir(document) -> Showing available properties regarding document object
+// console.dir(document) -> Showing available properties regarding document object.
 
-// 91
-// Select the element or group of elements
-// Decide the effect we want to apply to the selection
+// ----------------- 91
+// Select the element or group of elements what I want.
+// Decide the effect we want to apply to the selection.
 
-const h1 = document.getElementById('title')
+const h1 = document.getElementById('h1')
 h1.style.color = 'red'
 
-// 92
-// getElementByTagName('tagname')
-// HTMLCollection = array-like object
-// index, length property but not array methods (forEach)
+// ----------------- 92
+// getElementsByTagName('tagname')
+// Return HTMLCollection = array-like object
 
-// querySelectorAll() in most cases
-// NodeList - objects are collections of nodes
-// can run forEach
-// turn them into array - spread operator [...]
-// after that can use any array properties
+const h2 = document.getElementsByTagName('h2')
+console.log(h2)
+console.log(h2.length) // 2
 
-const headings = document.getElementsByTagName('h2')
-console.log(headings) // Output: HTMLCollection(2) [h2, h2]
+// h1Tag is HTMLCollection which is array like. So, selection will be like -
+h2[0].style.color = 'green' // Working because of HTMLCollection
+h2[1].style.color = 'blue'
 
-newHeadings = [...headings]
+// another example
+const li = document.getElementsByTagName('li')
+console.log(li.length) // 5
+li[1].style.fontSize = '20px' // Because of using HTMLCollection
 
-newHeadings.forEach((item) => {
-    console.log(item) // h2
+// I can't use forEach in HTMLCollection but I can turn them into array - spread operator [...]
+const betterLi = [...li]
+betterLi.forEach((item) => {
+    console.log(item)
+    item.style.color = 'red' // Because of turning into array
 })
 
-console.log(newHeadings) // Output: (2) [h2, h2]
+console.log(li) // HTMLCollection
+console.log(betterLi) // Array (Turn from HTMLCollection)
 
-// 93
+// ----------------- 93
 // getElementByClassName('classname')
 // HTMLCollection
-
 const listItem = document.getElementsByClassName('special')
-console.log(listItem) // Output: HTMLCollection(3) [li.special, li.special, li.special]
+console.log(listItem.length) // 3
 
-// 94
+// ----------------- 94
 // querySelector('any css') - selects single
 // querySelectorAll('any css') - selects all
 
-const result = document.querySelector('#result') // id
-result.style.backgroundColor = 'blue'
+// using id
+const result = document.querySelector('#result')
+console.log(result)
 
-const item = document.querySelector('.special') // class name
-console.log(item) // Output: li.special
+// using class
+const last = document.querySelector('.last')
+console.log(last)
 
-const lastItem = document.querySelector('li:last-child') // tag
-console.log(lastItem) // Output: <li class="special">tomato</li>
+const lilast = document.querySelector('li:last-child')
+console.log(lilast)
 
-const lists = document.querySelectorAll('.special')
-console.log(lists) // NodeList(3) [li.special, li.special, li.special]
+// NodeList
+const special = document.querySelectorAll('.special')
+console.log(special.length)
 
-lists.forEach((item) => {
-    item.style.color = 'white'
+// I can use forEach loop
+special.forEach((item) => {
+    console.log(item)
+    item.style.color = 'yellow'
 })
-
-// 95
-// childNodes - returns all childNodes including whitespace which is treated as a text node.
-// children - returns only actual children
-// firstChild
-// lastchild
-
-const result1 = document.querySelector('#result')
-const allChildren = result1.childNodes
-console.log(allChildren) // Output: NodeList(11) [text, li.special, text, li, text, li.special, text, li, text, li.special, text]
-
-const children = result1.children
-console.log(children) // Output: HTMLCollection(5) [li.special, li, li.special, li, li.special]
-
-const first = result1.firstChild
-console.log(first) // Output: #text
-
-const last = result1.lastChild
-console.log(last) // Output: #text
-
-// 96
-// parentElement
-const parent = result1.parentElement
-console.log(parent) // Output: <body></body>
-
-// 97
-// previousSibling
-// nextSibling
-// return whitespace
-
-const sibling = document.querySelector('.siblings')
-console.log(sibling.nextSibling) // Output: #text
-console.log(sibling.nextSibling.nextSibling) // Output: <li>pear</li>
-
-console.log(sibling.previousSibling) // Output: #text
-console.log(sibling.previousSibling.previousSibling) // Output: <li>orange</li>
-
-// 98
-// previousElementSibling
-// nextElementSibling
-console.log(sibling.nextElementSibling) // Output: <li>pear</li>
-console.log(sibling.previousElementSibling) // Output: <li>orange</li>
-
-// 99
-// nodeValue
-// textContent
-const newValue = document.getElementById('title')
-const value1 = newValue.firstChild.nodeValue
-console.log(value1)
-
-const easyValue = newValue.textContent
-console.log(easyValue)
-
-// 100
-// getAttribute()
-// setAttribute()
-
-const first1 = document.querySelector('.className')
-const classValue = first1.getAttribute('class') // Retrieve class name
-console.log(classValue)
-
-const idValue = first1.getAttribute('id') // Retrieve id name
-console.log(idValue)
-
-const linkValue = document.getElementById('link')
-const showLink = linkValue.getAttribute('href')
-console.log(showLink)
-
-const lastValue = link.nextElementSibling
-lastValue.setAttribute('class', 'first')
-lastValue.textContent = 'I also have a class of first'
-console.log(lastValue)
