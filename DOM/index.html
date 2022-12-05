@@ -5,12 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Learning JavaScript</title>
+        <style>
+            .f1 {
+                color: red
+            }
+        </style>
     </head>
     <body>
         <!-- getElementById('h1') - receive id -->
         <h1 id="h1">getElementById</h1>
         <!-- <h6>getElementsByTagName</h6> -->
-        <a id="link" href="first.html">I have no value</a>
+        <a id="link" class="hello" href="first.html">I have no value</a>
         
         <!-- getElementByTagName('h2') - receive tag name -->
         <h2>Hello world</h2>
@@ -23,6 +28,15 @@
             <li class="special last">tomato</li>
         </ul>
 
-        <script src="dom.js"></script>
+        <div id="result">
+            <h1>Hello World</h1>
+            <div id="second">
+                <h1 class="first-heading">Hello World 2</h1>
+            </div>
+        </div>
+
+        <h1 id="first1" class="colors">I'm first element</h1>
+
+        <script src="index.js"></script>
     </body>
 </html>
