@@ -13,15 +13,33 @@
                 text-transform: uppercase;
                 font-size: 2rem;
             }
+
+            a {
+                display: inline-block;
+                margin-top: 100vh;
+            }
         </style>
     </head>
-    <br>
-        <h1>Hello World</h1>
-        <button id="btn">Click Event</button> <br/>
-        <button id="btn1">Click Event with function reference</button> <br/>
-        <button id="btn2">Mouse Event</button> <br/>
+    <body>
+        <!-- T-115: currentTarget vs target -->
+        <button class="first">first button</button>
+        <button class="first">
+            second <strong>button <strong>more nested</strong></strong>
+        </button>
+        <button class="first">third button</button>
 
-        <input type="text" id="name"/> <br/>
+        <!-- T-110 to T-114 -->
+        <h1>Hello World</h1>
+        <button id="btn">Click Event</button> <br />
+        <button id="btn1">Click Event with function reference</button> <br />
+        <button id="btn2">Mouse Event</button> <br />
+
+        <input type="text" id="name" /> <br />
+
+        <button id="btn3">Click Me for Event Object</button> <br />
+        <h2 id="h2">No activity for 'this' keyword</h2>
+        <br />
+        <a href="#" id="link">random link</a>
 
         <script src="index-events.js"></script>
     </body>
