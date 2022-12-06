@@ -86,9 +86,33 @@ demo.remove(demoHeading2)
 
 // ----------------- 107 -----------------
 // innerHTML, textContent
+const demo1 = document.querySelector('#demo1')
+console.log(demo1.textContent) // Just showing the content of the 'div' tag
+console.log(demo1.innerText) // Just showing the content of the 'div' tag
+console.log(demo1.innerHTML) // Showing the content with related tags
 
+// Adding the text with tags - use 'innerHTML'
+// Must use `` while using 'innerHTML'
+demo1.innerHTML = `<h1 id="prince">Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2>`
+
+const demo2 = document.getElementById('demo2')
+// Showing the way I write inside ``.
+demo2.textContent = `<h1>Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2>`
+
+// Working like 'textContent'
+// demo2.innerText = `<h1>Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2><h1>Heading 1 again</h1><h2>Heading 2 again</h2>`
+
+// It doesn't effect because it has not no tag attached.
+// demo2.textContent = 'Hello Prince'
+// demo2.innerText = 'Hello'
 
 // ----------------- 108 -----------------
-// ----------------- 109 -----------------
-// ----------------- 110 -----------------
-// ----------------- 111 -----------------
+// Using CSS style property
+const prince = demo1.querySelector('#prince')
+
+// console.log(prince)
+// console.log(prince.textContent)
+
+// Using CSS style property like that way
+prince.style.color = 'red'
+prince.style.backgroundColor = 'Black'
