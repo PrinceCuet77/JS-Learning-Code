@@ -16,7 +16,7 @@ function afternoon(name) {
 // morning - callback function
 function greetings(name, cb) {
     const myName = 'Prince'
-    console.log(`${morning(name)}, I'm ${myName}.`)
+    console.log(`${cb(name)}, I'm ${myName}.`)
 }
 
 greetings('john', morning)
